@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 
 const TextInput = ({
   name,
@@ -10,9 +12,11 @@ const TextInput = ({
   formSubmitted = false,
   onFocus = () => {},
   setIsError = () => {},
+  isPassword = false,
 }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [showPassword, setShowPassword] = useState(isPassword);
 
   const validateInput = useCallback(
     (inputValue) => {
@@ -69,8 +73,8 @@ const TextInput = ({
       <input
         name={name}
         placeholder={placeholder}
-        className="bg-fieldColor-light/10 dark:bg-fieldColor-dark/10 text-fieldColor-light dark:text-fieldColor-dark p-2 focus:outline-none placeholder:text-fieldColor-light/50 placeholder:dark:text-fieldColor-dark/50"
-        type="text"
+        className="bg-fieldColor-light/10 dark:bg-fieldColor-dark/10 text-fieldColor-light dark:text-fieldColor-dark p-2 focus:outline-none placeholder:text-fieldColor-light/50 placeholder:dark:text-fieldColor-dark/50 border border-fieldColor-light/10 dark:border-fieldColor-dark/10"
+        type={showPassword ? "password" : "text"}
         value={value}
         onChange={onChange}
         onFocus={() => {
@@ -80,14 +84,29 @@ const TextInput = ({
         onBlur={() => setIsFocused(false)}
       />
       {errorMessage && <ErrorMessage message={errorMessage} />}
+      {isPassword && (
+        <PasswordButton
+          showPassword={showPassword}
+          setShowPassword={setShowPassword}
+        />
+      )}
     </div>
   );
 };
 
 const ErrorMessage = ({ message }) => (
-  <p className="absolute text-[11px] font-medium -bottom-1 right-1 text-red-600 dark:text-red-300">
+  <p className="absolute text-[11px] font-medium -bottom-1 left-1 text-red-600 dark:text-red-300">
     {message}
   </p>
+);
+
+const PasswordButton = ({ showPassword, setShowPassword }) => (
+  <button
+    onClick={() => setShowPassword((prev) => !prev)}
+    className="absolute text-fieldColor-light/50 dark:text-fieldColor-dark/50 top-[30px] right-3"
+  >
+    {showPassword ? <IoIosEye size={20} /> : <IoIosEyeOff size={20} />}
+  </button>
 );
 
 export default TextInput;

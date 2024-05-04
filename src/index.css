@@ -6,8 +6,36 @@
   @apply transition-colors duration-200
 }
 
+
 body{
   margin: 0;
+}
+
+
+/* Styling for Mozilla Firefox */
+.tab-scroll {
+  scrollbar-width: none; /* Width of the scrollbar */
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #9e9d9d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #181818;
 }
 
 input[type="checkbox"] {
@@ -37,5 +65,114 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
-  background-color: rgb(6, 167, 241);
+  /* background-color: rgb(6, 167, 241); */
+}
+
+.login-background{
+  background-color: #17130D;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23d6bb95' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23f1a740' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23c8a87d' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23c18a41' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23bb9664' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%2391672f' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23ae844d' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23674b27' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%239e7135' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%233d2f1d' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23926429' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%2332302e' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.form-background{
+  background-color: #F2EEE8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%236c5028' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23f1a73f' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23826235' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23bf8735' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23997543' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%238f682b' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23b18951' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23634a22' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c99d5f' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%233b2d19' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23e2b26e' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%2317130d' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+select:hover option {
+  background-color: #e0e0e0; /* Example hover color */
+}
+
+select:focus option {
+  background-color: #d0d0d0; /* Example focus color */
+}
+
+.square {
+  width: 150px;
+  height: 100px;
+  transition: transform 100ms ease-out, border-radius 200ms ease-out;
+}
+
+.square .cover {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px 10px 0 0;
+  background-size: cover!important;
+  background-position: center!important;
+}
+
+.square .text {
+  display: none;
+  background: #181818;
+  color: #fff;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: opacity 300ms ease-out, border-radius 200ms ease-out;
+  border-radius: 0 0 10px 10px;
+}
+
+.square:hover {
+  border-radius: 10px;
+  transform: scale(1.5);
+  box-shadow: 0 0 2px #000a;
+}
+
+.square:hover .text {
+  display: block;
+}
+
+.square.one .cover {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg/320px-Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg), skyblue;
+}
+
+.square.one:hover .cover {
+  background: url(https://media.giphy.com/media/lgcUUCXgC8mEo/giphy.gif), url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg/320px-Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg), skyblue;
+}
+
+.selected-tab::before{
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: -19px;
+  width: 16px;
+  height: 20px;
+
+}
+
+.selected-tab::after{
+  content: '';
+  position: absolute;
+  top: 26px;
+  right: -19px;
+  width: 16px;
+  height: 20px;
+}
+
+#container {
+  scroll-snap-type: x proximity;
+  width: 100%;
+  white-space: nowrap;
+  /* overflow-x: auto; */
+}
+
+#container > div:first-child {
+  margin-left: 5%;
+}
+
+#container >  div:last-child {
+  margin-right: 5%;
+}
+
+#container > div {
+  flex-shrink: 0;
+  width: 30%;
+  aspect-ratio: 16/9;
+  margin: 5px;
+  scroll-snap-align: center;
 }

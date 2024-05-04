@@ -71,7 +71,7 @@ const TextAreaInput = ({
         rows={rows}
         name={name}
         placeholder={placeholder}
-        className="bg-fieldColor-light/10 dark:bg-fieldColor-dark/10 text-fieldColor-light dark:text-fieldColor-dark p-2 focus:outline-none placeholder:text-fieldColor-light/50 placeholder:dark:text-fieldColor-dark/50"
+        className="bg-fieldColor-light/10 dark:bg-fieldColor-dark/10 text-fieldColor-light dark:text-fieldColor-dark p-2 focus:outline-none placeholder:text-fieldColor-light/50 placeholder:dark:text-fieldColor-dark/50 border border-fieldColor-light/10 dark:border-fieldColor-dark/10"
         value={value}
         onChange={onChange}
         onFocus={() => {
@@ -86,7 +86,7 @@ const TextAreaInput = ({
 };
 
 const ErrorMessage = ({ message }) => (
-  <p className="absolute text-[11px] font-medium -bottom-1 right-1 text-red-600 dark:text-red-300">
+  <p className="absolute text-[11px] font-medium -bottom-1 left-1 text-red-600 dark:text-red-300">
     {message}
   </p>
 );

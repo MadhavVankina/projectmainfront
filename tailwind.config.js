@@ -34,8 +34,12 @@ module.exports = {
         },
         fieldColor: {
           dark: "#E7E6E4",
-          light: "#1B1A18",
+          light: "#17130D",
         },
+      },
+      boxShadow: {
+        tabLight: "0 -8px 0 0 #F2EEE8",
+        tabDark: "0 -8px 0 0 #17130D",
       },
     },
   },

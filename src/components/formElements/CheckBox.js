@@ -37,12 +37,12 @@ const Checkbox = ({
   };
 
   return (
-    <div className="flex items-center gap-2 py-3 relative">
+    <div className="flex items-center gap-2 py-4 relative">
       <input
         type="checkbox"
         checked={isChecked}
         onChange={handleChange}
-        className="border border-fieldColor-light/50 dark:border-fieldColor-dark/50"
+        className="border border-fieldColor-light/50 dark:border-fieldColor-dark/50 checked:before:bg-fieldColor-light dark:checked:before:bg-fieldColor-dark"
       />
       {label && (
         <label className="text-black/60 dark:text-white/60 text-sm">
@@ -55,7 +55,7 @@ const Checkbox = ({
 };
 
 const ErrorMessage = ({ message }) => (
-  <p className="absolute text-[11px] font-medium -bottom-1 right-1 text-red-600 dark:text-red-300">
+  <p className="absolute text-[11px] font-medium -bottom-1 left-1 text-red-600 dark:text-red-300">
     {message}
   </p>
 );
