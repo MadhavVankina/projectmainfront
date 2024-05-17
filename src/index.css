@@ -176,3 +176,7 @@ select:focus option {
   margin: 5px;
   scroll-snap-align: center;
 }
+
+.react-player__shadow{
+  opacity: 0 !important;
+}

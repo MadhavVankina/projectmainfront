@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../components/common/Navbar";
+import React, { useState } from "react";
 import { ToastMe } from "../components/common/Toast";
 import TextInput from "../components/formElements/TextInput";
 import Skeleton from "../components/common/Skeleton";
@@ -12,7 +11,6 @@ import Dropdown from "../components/formElements/Dropdown";
 import Tabs from "../components/common/Tabs";
 import Slider from "../components/common/Slider";
 import MenuTabs from "../components/common/MenuTabs";
-import Carousel from "../components/common/Carousel";
 
 const Home = () => {
   const [testValue, setTestValue] = useState("");
@@ -20,6 +18,8 @@ const Home = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedvalues, setSelectedValues] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
+
+  localStorage.setItem("muted", "1");
 
   const options = [
     {
@@ -47,6 +47,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       <Skeleton>
+        <MenuTabs />
         <Tabs
           activeTab={activeTab}
           setActiveTab={setActiveTab}
@@ -90,8 +91,8 @@ const Home = () => {
         />
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-2">
           <Dropdown
-            multi={false}
-            searchable={false}
+            multi={true}
+            searchable={true}
             label={"Dropdown"}
             options={options}
             selectedvalues={selectedvalues}
@@ -164,9 +165,20 @@ const Home = () => {
         <div className="h-40 bg-fieldColor-light/10 dark:bg-fieldColor-dark/10"></div>
       </Skeleton>
       <div className="pb-[40vh] pt-[10vh] bg-background-light dark:bg-background-dark flex flex-col gap-[10vh]">
-        <Slider slidePerView={5} aspectRatio={"16/9"} />
-        <Slider slidePerView={5} aspectRatio={"16/9"} />
-        <div className="h-40 bg-fieldColor-light/10 dark:bg-fieldColor-dark/10"></div>
+        <Slider
+          slidePerView={5}
+          aspectRatio={"16/9"}
+          data={[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+        />
+        <Slider
+          slidePerView={5}
+          aspectRatio={"16/9"}
+          data={[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+        />
+
+        <div className="h-40 bg-fieldColor-light/10 dark:bg-fieldColor-dark/10">
+          {/* <VideoPlayer /> */}
+        </div>
       </div>
     </div>
   );
