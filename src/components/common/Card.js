@@ -9,6 +9,7 @@ const Card = ({
   aspectRatio,
   index,
   image,
+  trailer,
   slidePerView,
   movesLeft,
 }) => {
@@ -62,7 +63,7 @@ const Card = ({
             style={{ aspectRatio, backgroundImage: `url(${image})` }}
             className="w-full bg-zinc-900 bg-cover bg-center"
           >
-            {hovered && <VideoPlayer image={image} />}
+            {hovered && <VideoPlayer image={image} trailer={trailer} />}
           </div>
 
           <div

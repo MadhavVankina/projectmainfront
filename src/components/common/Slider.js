@@ -1,13 +1,7 @@
 import React, { useRef, useState, useEffect, memo } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
-import { AiOutlineLike } from "react-icons/ai";
-import { FaPlay } from "react-icons/fa";
-import { IoMdAdd } from "react-icons/io";
 import image from "../../assets/images/itachi.jpg";
-import ReactPlayer from "react-player";
-import VidyardPlayer from "react-player/vidyard";
-import VideoPlayer from "./VideoPlayer";
 import Card from "./Card";
 
 const Slider = memo(({ slidePerView = 4, aspectRatio = "16/10", data }) => {
@@ -61,11 +55,12 @@ const Slider = memo(({ slidePerView = 4, aspectRatio = "16/10", data }) => {
         style={{ transform: `translateX(-${width * steps}%)` }}
         className="tab-scroll flex flex-nowrap transition-all duration-1000"
       >
-        {data?.map((_, index) => (
+        {data?.map((item, index) => (
           <Card
             width={width}
             index={index}
-            image={image}
+            image={item.backgroundImage}
+            trailer={item.trailer}
             slidePerView={slidePerView}
             movesLeft={movesLeft}
             aspectRatio={aspectRatio}

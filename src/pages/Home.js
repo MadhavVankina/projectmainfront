@@ -11,6 +11,13 @@ import Dropdown from "../components/formElements/Dropdown";
 import Tabs from "../components/common/Tabs";
 import Slider from "../components/common/Slider";
 import MenuTabs from "../components/common/MenuTabs";
+import itachi from "./../assets/images/itachi.jpg";
+import naruto from "./../assets/videos/video.mp4";
+import deathnote from "./../assets/images/deathnote.jpg";
+import friends from "./../assets/images/friends.jpg";
+import office from "./../assets/images/office.jpg";
+import ozark from "./../assets/images/ozark.jpg";
+import bettercallsaul from "./../assets/images/bettercallsaul.jpg";
 
 const Home = () => {
   const [testValue, setTestValue] = useState("");
@@ -41,6 +48,57 @@ const Home = () => {
     {
       value: 4,
       label: "Binary Tree",
+    },
+  ];
+
+  const sliderData = [
+    {
+      backgroundImage: itachi,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: deathnote,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: friends,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: ozark,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: office,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: bettercallsaul,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: itachi,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: deathnote,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: friends,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: ozark,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: office,
+      trailer: naruto,
+    },
+    {
+      backgroundImage: bettercallsaul,
+      trailer: naruto,
     },
   ];
 
@@ -165,16 +223,8 @@ const Home = () => {
         <div className="h-40 bg-fieldColor-light/10 dark:bg-fieldColor-dark/10"></div>
       </Skeleton>
       <div className="pb-[40vh] pt-[10vh] bg-background-light dark:bg-background-dark flex flex-col gap-[10vh]">
-        <Slider
-          slidePerView={5}
-          aspectRatio={"16/9"}
-          data={[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-        />
-        <Slider
-          slidePerView={5}
-          aspectRatio={"16/9"}
-          data={[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-        />
+        <Slider slidePerView={5} aspectRatio={"16/9"} data={sliderData} />
+        <Slider slidePerView={5} aspectRatio={"16/9"} data={sliderData} />
 
         <div className="h-40 bg-fieldColor-light/10 dark:bg-fieldColor-dark/10">
           {/* <VideoPlayer /> */}

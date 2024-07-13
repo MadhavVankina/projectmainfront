@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
-import video from "../../assets/videos/video.mp4";
 import { VscMute } from "react-icons/vsc";
 import { VscUnmute } from "react-icons/vsc";
 
-const VideoPlayer = ({ image }) => {
+const VideoPlayer = ({ image, trailer }) => {
   const [showImage, setShowImage] = useState(true);
   const [playing, setPlaying] = useState(false);
   const playerRef = useRef();
@@ -49,7 +48,7 @@ const VideoPlayer = ({ image }) => {
             style={{ borderRadius: "5px", transition: "opacity 0.5s" }}
             width="100%"
             height="97%"
-            url={video}
+            url={trailer}
             playing={playing}
             loop={true}
             muted={mute}
