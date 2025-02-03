@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { useDarkMode } from "./components/common/DarkModeContext";
 import Login from "./pages/Login";
+import Layouts from "./pages/Layouts";
 
 function App() {
   const { theme } = useDarkMode();
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/layouts" element={<Layouts />} />
         </Routes>
       </BrowserRouter>
     </div>
