@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { useDarkMode } from "./components/common/DarkModeContext";
 import Login from "./pages/Login";
 import Layouts from "./pages/Layouts";
+import 'react-tooltip/dist/react-tooltip.css'
 
 function App() {
   const { theme } = useDarkMode();
